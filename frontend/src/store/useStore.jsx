@@ -1,12 +1,18 @@
-import { create } from 'zustand'
+import { create } from "zustand";
 
-const prosuctsStore = create((set) => ({
-    products: [],
-    categories: [],
+const productsStore = create((set) => ({
+  products: [],
+  categories: [],
 
-    setProducts: (products) => set({ products }),
-    setCategories: (categories) => set({ categories }),
-}))
+  filters: {
+    category: [],
+    priceRange: [0, 200],
+  },
 
-export default prosuctsStore;
+  setProducts: (products) => set({ products }),
+  setCategories: (categories) => set({ categories }),
+  setFilters: (filters) =>
+    set((state) => ({ filters: { ...state.filters, ...filters } })),
+}));
 
+export default productsStore;
