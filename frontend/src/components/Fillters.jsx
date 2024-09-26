@@ -14,10 +14,11 @@ export default function Fillters() {
   const hendelCategoryChange = (e) => {
     const { value, checked } = e.target;
     const newCategories = checked
-      ? [...filters.category, value]
-      : filters.category.filter((category) => category != value);
+      ? [...filters.categories, value]
+      : filters.categories.filter((categories) => categories != value);
 
-    setFilters({ ...filters, category: newCategories });
+    setFilters({ ...filters, categories: newCategories });
+    
   };
 
   const hendelPriceChange = (e) => {

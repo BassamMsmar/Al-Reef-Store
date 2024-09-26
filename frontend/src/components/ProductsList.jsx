@@ -3,13 +3,13 @@ import productsStore from "../store/useStore";
 import { getProducts } from "../store/api";
 
 export default function ProductsList() {
-  const { products, setProducts } = productsStore();
+  const { products, setProducts, filters } = productsStore();
 
   useEffect(() => {
-    getProducts().then((products) => {
+    getProducts(filters).then((products) => {
       setProducts(products);
     });
-  }, []);
+  }, [filters]);
 
   return (
     <>
