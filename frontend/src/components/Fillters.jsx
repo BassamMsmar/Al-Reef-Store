@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import productsStore from "../store/useStore";
 import { getCategories } from "../store/api";
 
@@ -20,7 +20,6 @@ export default function Fillters() {
     setFilters({ ...filters, category: newCategories });
   };
 
-  
   const hendelPriceChange = (e) => {
     const { value, checked } = e.target;
     console.log(checked, value);
